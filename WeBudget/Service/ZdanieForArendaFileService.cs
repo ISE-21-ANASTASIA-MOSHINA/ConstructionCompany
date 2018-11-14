@@ -6,6 +6,7 @@ using System.Web;
 using System.IO;
 using WeBudget.Models;
 using System.Xml.Serialization;
+using System.Text.RegularExpressions;
 
 namespace WeBudget.Service
 {
@@ -18,24 +19,24 @@ namespace WeBudget.Service
 
         public void Create(ZdanieForArenda zdanieForArenda)
         {
-           
-            int fCount = Directory.GetFiles(currentPath, "*", SearchOption.TopDirectoryOnly).Length;
-            int id = fCount + 1;
+
+            int max = 0;
+            foreach (var path in Directory.GetFiles(currentPath, "*", SearchOption.TopDirectoryOnly))
+            {
+                Match m = Regex.Match(path, @"ZdanieForArenda\d+");
+                int currentId = Convert.ToInt32(m.Value.Replace("ZdanieForArenda", ""));
+                if (currentId > max)
+                {
+                    max = currentId;
+                }
+            }
+            int id = max + 1;
             zdanieForArenda.Id = id;
             string newFilePath = currentPath + "/ZdanieForArenda" + id + ".txt";
             StringWriter txtWriter = new StringWriter();
             xsSubmit.Serialize(txtWriter, zdanieForArenda);
             File.WriteAllText(newFilePath, txtWriter.ToString());
-           
-
-
-
-
-
-
-
-
-
+            txtWriter.Close();
 
         }
 
@@ -53,8 +54,13 @@ namespace WeBudget.Service
 
         public ZdanieForArenda findZdanieForArendaById(int? id)
         {
-            StreamReader stream = new StreamReader(currentPath + "/ZdanieForArenda" + id + ".txt", true);
-            return (ZdanieForArenda)xsSubmit.Deserialize(stream);
+            ZdanieForArenda zdanie;
+            using (StreamReader stream = new StreamReader(currentPath + "/ZdanieForArenda" + id + ".txt", true))
+            {
+                zdanie = (ZdanieForArenda)xsSubmit.Deserialize(stream);
+                stream.Close();
+            }
+            return zdanie;
         }
 
         public List<ZdanieForArenda> getList()

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ZdanieForPokupka xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>5</Id>
-  <Date>07-11-2018</Date>
-  <Engineer>456</Engineer>
-  <Sum>0</Sum>
-  <Comment>5555555</Comment>
-  <User>0</User>
-</ZdanieForPokupka>

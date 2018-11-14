@@ -7,7 +7,7 @@ using WeBudget.Models;
 
 namespace WeBudget.Service
 {
-	public class ZdanieForPokupkaService
+	public class ZdanieForFilePokupkaService
 	{
 		ConstructionCompanyContext db = new ConstructionCompanyContext();
 

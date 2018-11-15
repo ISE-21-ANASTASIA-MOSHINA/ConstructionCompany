@@ -11,7 +11,7 @@ namespace WeBudget.Controllers
 {
     public class ZdanieForPokupkaController : Controller
     {
-        ZdanieForPokupkaFileService zdanieForPokupkaService = new ZdanieForPokupkaFileService();
+        ZdanieForPokupkaService zdanieForPokupkaService = new ZdanieForPokupkaService();
 
         [HttpGet]
         public ActionResult EditZdanieForPokupka(int? id)

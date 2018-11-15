@@ -77,11 +77,5 @@ namespace WeBudget.Service
             return zdanieArendaList;
         }
 
-
-        public void Dispose()
-        {
-            db.Dispose();
-        }
-
     }
 }

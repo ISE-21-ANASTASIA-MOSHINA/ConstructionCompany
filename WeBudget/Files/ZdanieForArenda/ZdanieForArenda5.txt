@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ZdanieForArenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>5</Id>
-  <Date>07-11-2018</Date>
-  <Enginner>Катерина</Enginner>
-  <Sum>1500000000</Sum>
-  <Comment>дополнительная информация</Comment>
-  <User>0</User>
-</ZdanieForArenda>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ZdanieForPokupka xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>4</Id>
-  <Date>2018-12-24T00:00:00</Date>
-  <Engineer>Иванов</Engineer>
-  <Sum>1500000000</Sum>
-  <Comment>хуйня из-под коня</Comment>
-  <User>0</User>
-</ZdanieForPokupka>

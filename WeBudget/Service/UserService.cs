@@ -8,7 +8,7 @@ namespace WeBudget.Service
 {
     public class UserService
     {
-        ConstructionCompanyContext db = new ConstructionCompanyContext();
+        BudgetContext db = new BudgetContext();
 
         public void Create(User User) {
             db.Users.Add(User);

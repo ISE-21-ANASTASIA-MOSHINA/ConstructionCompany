@@ -1,1 +1,0 @@
-﻿Select * From ZdanieForPopukas

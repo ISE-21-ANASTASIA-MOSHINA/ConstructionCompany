@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ZdanieForArenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>3</Id>
-  <Date>24.12.2019 0:00:00</Date>
-  <Enginner>Катерина</Enginner>
-  <Sum>9464654546</Sum>
-  <Comment>жщшлололдьлдотдлш</Comment>
-  <User>0</User>
-</ZdanieForArenda>

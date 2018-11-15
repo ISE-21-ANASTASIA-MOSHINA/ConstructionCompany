@@ -11,7 +11,7 @@ namespace WeBudget.Controllers
 {
     public class ZdanieForArendaController : Controller
     {
-        ZdanieForArendaFileService zdanieForArendaService = new ZdanieForArendaFileService();
+        ZdanieForArendaService zdanieForArendaService = new ZdanieForArendaService();
 
         [HttpGet]
         public ActionResult EditRashod(int? id)
@@ -63,11 +63,6 @@ namespace WeBudget.Controllers
             ConstructionCompanyContext db = new ConstructionCompanyContext();
             // return View(rashodservice.getList());
             return View(db.ZdanieForArendas);
-        }
-        protected override void Dispose(bool disposing)
-        {
-            zdanieForArendaService.Dispose();
-            base.Dispose(disposing);
         }
     }
 }

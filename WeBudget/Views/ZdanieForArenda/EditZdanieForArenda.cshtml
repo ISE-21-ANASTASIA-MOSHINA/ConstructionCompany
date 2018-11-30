@@ -11,7 +11,7 @@
 }
 @model WeBudget.Models.ZdanieForArenda
 <h2>Здание для аренды № @Model.Id</h2>
-@using (Html.BeginForm("EditZdanieForArenda", "ZdanieForArenda", FormMethod.Post))
+@using (Html.BeginForm("UpdateZdanieForArenda", "ZdanieForArenda", FormMethod.Post))
 {
     <fieldset>
         @Html.HiddenFor(m => m.Id)
@@ -19,12 +19,6 @@
             @Html.LabelFor(m => m.Date, "Дата постройки")
             <br />
             @Html.EditorFor(m => m.Date)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.Enginner, "Главный инженер")
-            <br />
-            @Html.EditorFor(m => m.Enginner)
-
         </p>
         <p>
             @Html.LabelFor(m => m.Sum, "Стоимость постройки")

@@ -2,14 +2,12 @@
     ViewBag.Title = "Contact";
 }
 
-
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <title>MуBudget</title>
+    <title>Контакты</title>
     <link rel="stylesheet" href="~/Content/styles.css" type="text/css" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css" />
-
     <title>Выравнивание фотографии по центру</title>
 </head>
 
@@ -22,8 +20,6 @@
     .fig {
         text-align: center; /* Выравнивание по центру */
     }
-
-
     .center {
         width: 700px; /* Ширина элемента в пикселах */
         padding: 10px; /* Поля вокруг текста */
@@ -31,81 +27,99 @@
     }
 </style>
 
-<div class="center">
-    <nav>
-        <ul class="top-menu">
-            <li><a href="index">ГЛАВНАЯ</a></li>
-            <li><a href="About">О САЙТЕ</a></li>
-            <li class="active">ОБРАТНАЯ СВЯЗЬ</li>
-        </ul>
-    </nav>
-</div>
-
-
 <body>
-    <div class="center">
-        <div id="heading">
+    <div id="wrapper" ">
+        <header>
+            <form name="search" action="#" method="get">
+                <input type="text" name="q" placeholder="Дом"><button type="submit">Найти</button>
+            </form>
+        </header>
+        <nav>
 
-            <h1> ОБРАТНАЯ СВЯЗЬ</h1>
+            <ul class="top-menu">
+                <li>@Html.ActionLink("Главная", "Home", "Home")</li>
+                <li>@Html.ActionLink("О компании", "About", "Home")</li>
+                <li>@Html.ActionLink("Клиентам", "Customers", "Home")</li>
+                <li>@Html.ActionLink("Проекты", "Project", "Home")</li>
+                <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+            </ul>
 
-        </div>
+        </nav>
+
+
+        <section>
+            <blockquote>
+                <p>
+                    Адресс компании:
+
+                </p>
+                <p>
+                    г. Ростов-на-Дону, пл. Толстого, д. 1/2
+
+                </p>
+                <p>
+                    info@kristinastroy.ru
+                </p>
+                ____________________________________________________________________________________________________________________________
+                <p>
+                    Приемная директора:
+                </p>
+                <p>
+                    тел. 8 (863) 253-85-10
+                    kristina.firma@mail.ru
+                </p>
+                ____________________________________________________________________________________________________________________________
+                <p>
+                    Юридический отдел
+
+                </p>
+
+                <p>
+                    тел. 8 (863) 251-83-55
+                </p>
+
+
+            </blockquote>
+        </section>
     </div>
-</body>
 
 
 
-<aside>
-    <nav>
-        <ul class="aside-menu">
-            <li><a href="Table">ТАБЛИЦА РАСХОДОВ</a></li>
-            <li><a href="Dohodi">ДОХОДЫ И РАСХОДЫ</a></li>
-            <li><a href="Kakebo">KAKEBO</a></li>
-        </ul>
-    </nav>
-</aside>
-
-
-
-
-<section></section>
-
-
-<div class="center">
-    <h2>
-        Доброго времени суток! Со всеми вопросами, предложениями и отзывами можете обращаться по почте
-        <address>
-         <a href="mailto:catia.ekaterina@mail.ru">catua.ekaterina@mail.ru</a><br />
-        </address>
-    </h2>
-
-</div>
-
-
-
-
-<p class="fig">
-    <img src="~/img/1_O3sEH7H6LpLB7Mi6Q0yMOg.jpeg"
-         width="680" height="320" alt="Фотография">
-</p>
-
-<footer>
-    <div id="footer">
-        <div id="tw">
-            <h3>16-09-2018</h3>
-            <p>
-                Хорошо составленный годовой бюджет позволяет жить, не залезая в долги, значительную часть года.
-            </p>
-        </div>
-
-        <div id="sitemap">
-            <h3>О САЙТЕ</h3>
-            <div>
-                <a href="Contact">Обратная связь</a>
-                <a href="About">О проекте</a>
+    <footer>
+        <div id="footer">
+            <div id="twitter">
+                <h3>Связаться с нами</h3>
+                <time datetime="2012-10-23"><a href="#">25.09</a></time>
+                <p>
+                    Наши контакты:
+                    Телефон +7 000 000 00 00
+                </p>
+                <p>
+                    e-mail: samistroim@gmail.com
+                </p>
+            </div>
+            <div id="sitemap">
+                <h3>Карта сайта</h3>
+                <div>
+                    <a href="~/Views/Home/Home.cshtml">Главная</a>
+                    <a href="~/Views/Home/About.cshtml">О Компании</a>
+                </div>
+                <div>
+                    <a href="~/Views/Home/Customers.cshtml">Клиентам</a>
+                    <a class="~/Views/Home/Contact">Контакты</a>
+                </div>
+            </div>
+            <div id="social">
+                <h3>Социальные сети:</h3>
+                <a href="http://plus.google.com/" class="~img/googlepluse.png"></a>
+                <a href="http://instagram.com/" class="social-icon-small instagram"></a>
+                <a href="https://vk.com/" class="social-icon-small vk"></a>
+            </div>
+            <div id="footer-logo">
+                <a href="/"><img src="images/footer-logo.png" alt="Whitesquare logo"></a>
 
             </div>
         </div>
-    </div>
-</footer>
-
-
+    </footer>
+</body>
+</html>

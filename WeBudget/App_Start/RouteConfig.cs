@@ -18,6 +18,13 @@ namespace WeBudget
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            /*
+            routes.MapRoute(
+                name: "About",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "About" }
+            );
+            */
         }
     }
 }

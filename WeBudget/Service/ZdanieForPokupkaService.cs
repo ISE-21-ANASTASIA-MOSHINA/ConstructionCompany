@@ -7,11 +7,11 @@ using WeBudget.Models;
 
 namespace WeBudget.Service
 {
-	public class ZdanieForPokupkaService
+	public class ZdanieForPokupkaService : CRUDManagerForPokupka
 	{
 		ConstructionCompanyContext db = new ConstructionCompanyContext();
 
-        public void Delete(int id) {
+        public override void Delete(int id) {
             ZdanieForPokupka b = db.ZdanieForPokupkas.Find(id);
             if (b != null)
             {
@@ -20,28 +20,28 @@ namespace WeBudget.Service
             }
         }
 
-        public void Edit(ZdanieForPokupka zdanieForPokupka) {
+        public override void Edit(ZdanieForPokupka zdanieForPokupka) {
             db.Entry(zdanieForPokupka).State = EntityState.Modified;
             db.SaveChanges();
         }
             
-        public void Create(ZdanieForPokupka zdanieForPokupka) {
+        public override void Create(ZdanieForPokupka zdanieForPokupka) {
             db.ZdanieForPokupkas.Add(zdanieForPokupka);
             db.SaveChanges();
         }
 
-        public ZdanieForPokupka findZdanieForPokupkaById(int? id)
+        public override ZdanieForPokupka findZdanieForPokupkaById(int? id)
         {
             ZdanieForPokupka zdanieForPokupka = db.ZdanieForPokupkas.Find(id);
             return zdanieForPokupka;
         }
 
-        public List<ZdanieForPokupka> getList()
+        public override List<ZdanieForPokupka> getList()
         {
             return db.ZdanieForPokupkas.ToList();
         }
 
-        public void Dispose() {
+        public override void Dispose() {
             db.Dispose();
         }
     }

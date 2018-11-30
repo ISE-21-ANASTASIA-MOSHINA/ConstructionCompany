@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,21 @@ namespace WeBudget.Controllers
 {
     public class ZdanieForPokupkaController : Controller
     {
-        ZdanieForPokupkaService zdanieForPokupkaService = new ZdanieForPokupkaService();
+        CRUDManagerForPokupka zdanieForPokupkaService;
+
+        public ZdanieForPokupkaController()
+        {
+            string dataStore = ConfigurationManager.AppSettings["DataStore"].ToString();
+            switch (dataStore)
+            {
+                case "DB":
+                    zdanieForPokupkaService = new ZdanieForPokupkaService();
+                    break;
+                case "File":
+                    zdanieForPokupkaService = new ZdanieForPokupkaFileService();
+                    break;
+            }
+        }
 
         [HttpGet]
         public ActionResult EditZdanieForPokupka(int? id)

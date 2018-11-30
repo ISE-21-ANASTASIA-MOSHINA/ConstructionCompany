@@ -11,14 +11,10 @@ namespace WeBudget.Models
 
         public string Date { get; set; }
 
-        public string Enginner { get; set; }
-
         public double Sum { get; set; }
 
         public string Comment { get; set; }
 
-        public  int User { get; set; }
-
-
+        public int User { get; set; }
     }
 }

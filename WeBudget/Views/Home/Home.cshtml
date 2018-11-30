@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>О Компании</title>
+    <link rel="stylesheet" href="~/Content/styles.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css" />
+    <title>Выравнивание фотографии по центру</title>
+</head>
+
+<p class="fig">
+    <img src="~/img/home.jpg"
+         width="1263" height="320" alt="Фотография">
+</p>
+
+
+
+
+<style>
+    .fig {
+        text-align: center; /* Выравнивание по центру */
+    }
+
+
+    .center {
+        width: 700px; /* Ширина элемента в пикселах */
+        padding: 10px; /* Поля вокруг текста */
+        margin: auto; /* Выравниваем по центру */
+    }
+</style>
+
+<body>
+    <div id="wrapper" ">
+        <header>
+            <form name="search" action="#" method="get">
+                <input type="text" name="q" placeholder="Дом"><button type="submit">Найти</button>
+            </form>
+        </header>
+        <nav>
+
+            <ul class="top-menu">
+                <li>@Html.ActionLink("Главная", "Home", "Home")</li>
+                <li>@Html.ActionLink("О компании", "About", "Home")</li>
+                <li>@Html.ActionLink("Клиентам", "Customers", "Home")</li>
+                <li>@Html.ActionLink("Проекты", "Project", "Home")</li>
+                <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+            </ul>
+
+        </nav>
+
+
+        <section>
+            
+                <p>
+                    добро пожаловать на официальный сайт строительной компании «сами построим»!
+                </p>
+                <p>
+                    на нашем сайте вы можете ознакомиться со всеми проектами, строительство которых ведется на данный момент, посмотреть цены и планировки квартир в уже сданных объектах, записаться на просмотр или задать вопрос представителям компании или лично директору компании иванову ивану ивановичу.
+                </p>
+            
+        </section>
+    </div>
+
+
+
+    <footer>
+        <div id="footer">
+            <div id="twitter">
+                <h3>Связаться с нами</h3>
+                <time datetime="2012-10-23"><a href="#">25.09</a></time>
+                <p>
+                    Наши контакты:
+                    Телефон +7 000 000 00 00
+                </p>
+                <p>
+                    e-mail: samistroim@gmail.com
+                </p>
+            </div>
+            <div id="sitemap">
+                <h3>Карта сайта</h3>
+                <div>
+                    <a href="C:\Users\User\Desktop\www.construction/home.html">Главная</a>
+                    <a href="C:\Users\User\Desktop\www.construction/abaut.html">О нас</a>
+                </div>
+                <div>
+                    <a href="C:\Users\User\Desktop\www.construction/customers.html">Клиентам</a>
+                    <a href="C:\Users\User\Desktop\www.construction/contact.html">Контакты</a>
+                </div>
+            </div>
+            <div id="social">
+                <h3>Социальные сети:</h3>
+                <a href="http://plus.google.com/" class="social-icon google-plus"></a>
+                <a href="http://instagram.com/" class="social-icon-small instagram"></a>
+                <a href="https://vk.com/" class="social-icon-small vk"></a>
+            </div>
+            <div id="footer-logo">
+                <a href="/"><img src="images/footer-logo.png" alt="Whitesquare logo"></a>
+
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

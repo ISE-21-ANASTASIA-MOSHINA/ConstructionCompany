@@ -10,13 +10,13 @@ using System.Xml.Serialization;
 
 namespace WeBudget.Service
 {
-	public class ZdanieForPokupkaFileService
+	public class ZdanieForPokupkaFileService : CRUDManagerForPokupka
 	{
 		ConstructionCompanyContext db = new ConstructionCompanyContext();
         string currentPath = HttpContext.Current.Server.MapPath("~") + "/Files/ZdanieForPokupka";
         XmlSerializer xsSubmit = new XmlSerializer(typeof(ZdanieForPokupka));
 
-        public void Create(ZdanieForPokupka zdanieForPokupka)
+        public override void Create(ZdanieForPokupka zdanieForPokupka)
         {
             int max = 0;
             foreach (var path in Directory.GetFiles(currentPath, "*", SearchOption.TopDirectoryOnly))
@@ -37,11 +37,11 @@ namespace WeBudget.Service
             txtWriter.Close();
         }
 
-        public void Delete(int id) {
+        public override void Delete(int id) {
             File.Delete(currentPath + "/ZdanieForPokupka" + id + ".txt");
         }
 
-        public void Edit(ZdanieForPokupka zdanieForPokupka) {
+        public override void Edit(ZdanieForPokupka zdanieForPokupka) {
             StringWriter txtWriter = new StringWriter();
             xsSubmit.Serialize(txtWriter, zdanieForPokupka);
             File.WriteAllText(currentPath + "/ZdanieForPokupka" + zdanieForPokupka.Id + ".txt", txtWriter.ToString());
@@ -49,7 +49,7 @@ namespace WeBudget.Service
 
         }
 
-        public ZdanieForPokupka findZdanieForPokupkaById(int? id)
+        public override ZdanieForPokupka findZdanieForPokupkaById(int? id)
         {
             ZdanieForPokupka zdanie;
             using (StreamReader stream = new StreamReader(currentPath + "/ZdanieForPokupka" + id + ".txt", true))
@@ -60,7 +60,7 @@ namespace WeBudget.Service
             return zdanie;
         }
 
-        public List<ZdanieForPokupka> getList()
+        public override List<ZdanieForPokupka> getList()
         {
             string[] filesPaths = Directory.GetFiles(currentPath, "*", SearchOption.TopDirectoryOnly);
             List<ZdanieForPokupka> zdaniePokupkaList = new List<ZdanieForPokupka>();
@@ -74,10 +74,8 @@ namespace WeBudget.Service
             return zdaniePokupkaList;
         }
    
-        public void Dispose() {
+        public override void Dispose() {
             db.Dispose();
         }
-
-
     }
 }

@@ -8,7 +8,7 @@ namespace WeBudget.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Home()
         {
             return View();
         }
@@ -27,14 +27,14 @@ namespace WeBudget.Controllers
             return View();
         }
 
-        public ActionResult Dohodi()
+        public ActionResult Customers()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Table()
+        public ActionResult Project()
         {
             ViewBag.Message = "Your application description page.";
 

@@ -1,0 +1,146 @@
+﻿@{
+    ViewBag.Title = "Customers";
+}
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>О Компании</title>
+    <link rel="stylesheet" href="~/Content/styles.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css" />
+    <title>Выравнивание фотографии по центру</title>
+</head>
+
+<p class="fig">
+    <img src="~/img/home.jpg"
+         width="1263" height="320" alt="Фотография">
+</p>
+
+
+
+
+<style>
+    .fig {
+        text-align: center; /* Выравнивание по центру */
+    }
+
+
+    .center {
+        width: 700px; /* Ширина элемента в пикселах */
+        padding: 10px; /* Поля вокруг текста */
+        margin: auto; /* Выравниваем по центру */
+    }
+</style>
+
+<body>
+    <div id="wrapper" ">
+        <header>
+            <form name="search" action="#" method="get">
+                <input type="text" name="q" placeholder="Дом"><button type="submit">Найти</button>
+            </form>
+        </header>
+        <nav>
+
+            <ul class="top-menu">
+                <li>@Html.ActionLink("Главная", "Home", "Home")</li>
+                <li>@Html.ActionLink("О компании", "About", "Home")</li>
+                <li>@Html.ActionLink("Клиентам", "Customers", "Home")</li>
+                <li>@Html.ActionLink("Проекты", "Project", "Home")</li>
+                <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+            </ul>
+
+        </nav>
+        <div id="heading"></div>
+        <aside>
+            <nav>
+
+                <ul class="aside-menu">
+                    <li class="hypothec">Ипотека</li>
+                    <li><a href="/methods/">Методы и технологии</a></li>
+                    <li><a href="/documentation/">Документация</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section>
+            <p>
+                Сбербанк
+            </p>
+            <p>
+                Сбербанк (является банком-партнером Строительной компании «Кристина») объявил о действующих ставках по Ипотеке.
+            </p>
+            <figure>
+                <img src="~/img/sber.png" width="320" height="175" alt="">
+            </figure>
+
+            <p>
+                ___________________________________________________________________________________
+            </p>
+            <p>
+                КБ "ЛОКО-Банк" (АО)
+            </p>
+            <p>
+                Банк КБ "ЛОКО-Банк" (АО) предлагает ипотеку под 11.8% годовых
+            </p>
+            <figure>
+                <img src="~/img/lockobank.png" width="320" height="175" alt="">
+            </figure>
+
+            <p>
+                ___________________________________________________________________________________
+            </p>
+
+            <p>
+                Газпромбанк
+            </p>
+            <p>
+                Газпромбанк предлагает рефинансирование ипотечных кредитов под 9,5%!
+            </p>
+            <figure>
+                <img src="~/img/gazprombank.png" width="320" height="175" alt="">
+            </figure>
+            <p>
+                ___________________________________________________________________________________
+            </p>
+
+
+        </section>
+    </div>
+
+    <footer>
+        <div id="footer">
+            <div id="twitter">
+                <h3>Связаться с нами</h3>
+                <time datetime="2012-10-23"><a href="#">25.09</a></time>
+                <p>
+                    Наши контакты:
+                    Телефон +7 000 000 00 00
+                </p>
+                <p>
+                    e-mail: samistroim@gmail.com
+                </p>
+            </div>
+            <div id="sitemap">
+                <h3>Карта сайта</h3>
+                <div>
+                    <a href="~/Views/Home/Home.cshtml">Главная</a>
+                    <a href="~/Views/Home/About">О компании</a>
+                </div>
+                <div>
+                    <a href="~/Views/Home/Customers.cshtml">Клиентам</a>
+                    <a href="~/Views/Home/Contact.cshtml">Контакты</a>
+                </div>
+            </div>
+            <div id="social">
+                <h3>Социальные сети:</h3>
+                <a href="http://plus.google.com/" class="social-icon google-plus"></a>
+                <a href="http://instagram.com/" class="social-icon-small instagram"></a>
+                <a href="https://vk.com/" class="social-icon-small vk"></a>
+            </div>
+            <div id="footer-logo">
+                <a href="/"><img src="~/img/footer-logo.png" alt="Whitesquare logo"></a>
+
+            </div>
+        </div>
+    </footer>
+
+</body>

@@ -7,10 +7,10 @@ using WeBudget.Models;
 
 namespace WeBudget.Service
 {
-	public class ZdanieForArendaService
-	{
+	public class ZdanieForArendaService : CRUDManagerForArenda
+    {
         ConstructionCompanyContext db = new ConstructionCompanyContext();
-        public void Delete(int id)
+        public override void Delete(int id)
         {
             ZdanieForArenda b = db.ZdanieForArendas.Find(id);
             if (b != null)
@@ -20,19 +20,19 @@ namespace WeBudget.Service
             }
         }
 
-        public void Edit(ZdanieForArenda zdanieForArenda)
+        public override void Edit(ZdanieForArenda zdanieForArenda)
         {
             db.Entry(zdanieForArenda).State = EntityState.Modified;
             db.SaveChanges();
         }
 
-        public void Create(ZdanieForArenda zdanieForArenda)
+        public override void Create(ZdanieForArenda zdanieForArenda)
         {
             db.ZdanieForArendas.Add(zdanieForArenda);
             db.SaveChanges();
         }
 
-        public ZdanieForArenda findZdanieForArendaById(int? id)
+        public override ZdanieForArenda findZdanieForArendaById(int? id)
         {
             ZdanieForArenda zdanieForArenda = db.ZdanieForArendas.Find(id);
             return zdanieForArenda;

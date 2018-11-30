@@ -5,9 +5,9 @@
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <title>MуBudget</title>
+    <title>О Компании</title>
     <link rel="stylesheet" href="~/Content/styles.css" type="text/css" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css" /
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css" />
     <title>Выравнивание фотографии по центру</title>
 </head>
 
@@ -15,6 +15,7 @@
     <img src="~/img/home.jpg"
          width="1263" height="320" alt="Фотография">
 </p>
+
 
 
 
@@ -32,57 +33,81 @@
 </style>
 
 
+<body>
+    <div id="wrapper" ">
+        <header>
+            <form name="search" action="#" method="get">
+                <input type="text" name="q" placeholder="Дом"><button type="submit">Найти</button>
+            </form>
+        </header>
+        <nav>
 
-<div class="center">
-    <nav>
-        <ul class="top-menu">
-            <li><a href="index">ГЛАВНАЯ</a></li>
-            <li class="active">О КОМПАНИИ</li>
-            <li><a href="Contact">ОБРАТНАЯ СВЯЗЬ</a></li>
-        </ul>
-    </nav>
-</div>
+            <ul class="top-menu">
+                <li>@Html.ActionLink("Главная", "Home", "Home")</li>
+                <li>@Html.ActionLink("О компании", "About", "Home")</li>
+                <li>@Html.ActionLink("Клиентам", "Customers", "Home")</li>
+                <li>@Html.ActionLink("Проекты", "Project", "Home")</li>
+                <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+            </ul>
 
-
-
-<div class="center">
-    <div id="heading">
-        <h1>О компании</h1>
-    </div>
-</div>
-
-
-<aside>
-    <nav>
-        <ul class="aside-menu">
-            <li><a href="Table">Здание для аренды</a></li>
-            <li><a href="Dohodi">Зданрния для покупки</a></li>
-        </ul>
-    </nav>
-</aside>
-
-
-<div class="center">
-    <h2>
-        Наш сайт поможет вам в создании семейного бюджета, его грамотном составлении и ведении.Ничего лишнего. Только по
-        делу на понятном языке для каждого.
-    </h2>
-    <h2>Статьи пишутся исключительно с целью повышения Вашей финансовой грамотности.</h2>
-</div>
-<footer>
-    <div id="footer">
-        <div id="tw">
-            <h3>16-09-2018</h3>
+        </nav>
+        <div id="heading"></div>
+        <aside>
+            <nav>
+                <ul class="aside-menu">
+                    <li class="active">Руководсво</li>
+                    <li><a href="/history/">История</a></li>
+                    <li><a href="/news/">Новости</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section>
             <p>
-                Хорошо составленный годовой бюджет позволяет жить, не залезая в долги, значительную часть года.
+                Иванов Иван Иванович, директор и единственный работник Строительной компании "Что нам стоит"
             </p>
-        </div>
-        <div id="sitemap">
-            <h3>О САЙТЕ</h3>
-            <div>
-                <a href="Contact">Обратная связь</a>
-                <a href="About">О проекте</a>
+            <p>Иванов Иван Иванович почетный строитель Зеленогорзка. Под его руководством еще ничего не построили, но и не сломали</p>
+            <p>Верьте</p>
+            <figure>
+                <img src="~/img/ivan.png" width="320" height="175" alt="">
+            </figure>
+
+        </section>
+    </div>
+
+    <footer>
+        <div id="footer">
+            <div id="twitter">
+                <h3>Связаться с нами</h3>
+                <time datetime="2012-10-23"><a href="#">25.09</a></time>
+                <p>
+                    Наши контакты:
+                    Телефон +7 000 000 00 00
+                </p>
+                <p>
+                    e-mail: samistroim@gmail.com
+                </p>
+            </div>
+            <div id="sitemap">
+                <h3>Карта сайта</h3>
+                <div>
+                    <a href="C:\Users\User\Desktop\www.construction/home.html">Главная</a>
+                    <a href="C:\Users\User\Desktop\www.construction/abaut.html">О нас</a>
+                </div>
+                <div>
+                    <a href="C:\Users\User\Desktop\www.construction/customers.html">Клиентам</a>
+                    <a href="C:\Users\User\Desktop\www.construction/contact.html">Контакты</a>
+                </div>
+            </div>
+            <div id="social">
+                <h3>Социальные сети:</h3>
+                <a href="http://plus.google.com/" class="social-icon google-plus"></a>
+                <a href="http://instagram.com/" class="social-icon-small instagram"></a>
+                <a href="https://vk.com/" class="social-icon-small vk"></a>
+            </div>
+            <div id="footer-logo">
+                <a href="/"><img src="~/img/footer-logo.png" alt="Whitesquare logo"></a>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+</body>
+<head/>

@@ -10,14 +10,14 @@ using System.Text.RegularExpressions;
 
 namespace WeBudget.Service
 {
-	public class ZdanieForArendaFileService
+	public class ZdanieForArendaFileService : CRUDManagerForArenda
 	{
         ConstructionCompanyContext db = new ConstructionCompanyContext();
         string currentPath = HttpContext.Current.Server.MapPath("~") + "/Files/ZdanieForArenda";
         XmlSerializer xsSubmit = new XmlSerializer(typeof(ZdanieForArenda));
 
 
-        public void Create(ZdanieForArenda zdanieForArenda)
+        public override void Create(ZdanieForArenda zdanieForArenda)
         {
 
             int max = 0;
@@ -40,19 +40,19 @@ namespace WeBudget.Service
 
         }
 
-        public void Delete(int id)
+        public override void Delete(int id)
         {
             File.Delete(currentPath + "/ZdanieForArenda" + id + ".txt");
         }
 
-        public void Edit(ZdanieForArenda zdanieForArenda)
+        public override void Edit(ZdanieForArenda zdanieForArenda)
         {
             StringWriter txtWriter = new StringWriter();
             xsSubmit.Serialize(txtWriter, zdanieForArenda);
             File.WriteAllText(currentPath + "/ZddanieForArenda" + zdanieForArenda.Id + ".txt", txtWriter.ToString());
         }
 
-        public ZdanieForArenda findZdanieForArendaById(int? id)
+        public override ZdanieForArenda findZdanieForArendaById(int? id)
         {
             ZdanieForArenda zdanie;
             using (StreamReader stream = new StreamReader(currentPath + "/ZdanieForArenda" + id + ".txt", true))

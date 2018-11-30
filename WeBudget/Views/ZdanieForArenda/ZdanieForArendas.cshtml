@@ -73,11 +73,10 @@
             @grid.GetHtml(columns: grid.Columns(
                                                      grid.Column("Id", "№"),
                                                      grid.Column("Date", "Дата постройки"),
-                                                     grid.Column("Engineer", "Главный инженер"),
                                                      grid.Column("Sum", "Стоимость здания"),
                                                      grid.Column("Comment", "Дополнительная информация"),
                                                      grid.Column("Редактировать", format: @<a href="~/ZdanieForArenda/EditZdanieForArenda/@item.Id"> Редактировать</a>),
-                                                         grid.Column("Удалить", format: @<a href="~/ZdanieForArenda/DeleteZdanieForArenda/@item.Id"> Удалить</a>)
+                                                     grid.Column("Удалить", format: @<a href="~/ZdanieForArenda/DeleteZdanieForArenda/@item.Id"> Удалить</a>)
                                                              ), tableStyle: "table-bordered")
         </div>
         <input type="button" value="Добавить" onClick='location.href="CreateZdanieForArenda"'>

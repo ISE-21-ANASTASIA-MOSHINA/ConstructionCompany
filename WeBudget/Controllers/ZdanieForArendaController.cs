@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -11,10 +12,24 @@ namespace WeBudget.Controllers
 {
     public class ZdanieForArendaController : Controller
     {
-        ZdanieForArendaService zdanieForArendaService = new ZdanieForArendaService();
+        CRUDManagerForArenda zdanieForArendaService;
+         
+        public ZdanieForArendaController()
+        {
+            string dataStore = ConfigurationManager.AppSettings["DataStore"].ToString();
+            switch (dataStore)
+            {
+                case "DB":
+                    zdanieForArendaService = new ZdanieForArendaService();
+                    break;
+                case "File":
+                    zdanieForArendaService = new ZdanieForArendaFileService();
+                    break;
+            }
+        }
 
         [HttpGet]
-        public ActionResult EditRashod(int? id)
+        public ActionResult EditZdanieForArenda(int? id)
         {
             if (id == null)
             {
@@ -29,11 +44,11 @@ namespace WeBudget.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditZdanieForArenda(ZdanieForArenda zdanieForArenda)
+        public ActionResult UpdateZdanieForArenda(ZdanieForArenda zdanieForArenda)
 
         {
             zdanieForArendaService.Edit(zdanieForArenda);
-            return RedirectToAction("EditZdanieForArendas");
+            return RedirectToAction("ZdanieForArendas");
         }
 
         [HttpGet]

@@ -11,8 +11,6 @@ namespace WeBudget.Models
 
         public DateTime Date { get; set; }
 
-        public string Engineer { get; set; }
-
         public int Sum { get; set; }
 
         public string Comment { get; set; }

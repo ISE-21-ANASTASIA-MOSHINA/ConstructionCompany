@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "ZdanieForPokupkas";
+    ViewBag.Title = "Проекты";
 }
 
 
@@ -14,7 +14,7 @@
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <title>MуBudget</title>
+    <title>Проекты</title>
     <link rel="stylesheet" href="~/Content/styles.css" type="text/css" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css" />
 
@@ -43,42 +43,69 @@
          width="1263" height="320" alt="Фотография">
 </p>
 
-<div class="center">
+<div id="wrapper">
     <nav>
+
         <ul class="top-menu">
-            <li><a href="index">ГЛАВНАЯ</a></li>
-            <li class="About">О САЙТЕ</li>
-            <li><a href="Contact">ОБРАТНАЯ СВЯЗЬ</a></li>
+            <li>@Html.ActionLink("Главная", "Home", "Home")</li>
+            <li>@Html.ActionLink("О компании", "About", "Home")</li>
+            <li>@Html.ActionLink("Клиентам", "Customers", "Home")</li>
+            <li>@Html.ActionLink("Проекты", "ZdanieForPokupkas", "ZdanieForPokupka")</li>
+            <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
         </ul>
+
     </nav>
 </div>
-<aside>
-    <nav>
-        <ul class="aside-menu">
-            <li><a href="Table">ТАБЛИЦА РАСХОДОВ</a></li>
-            <li><a href="Dohodi">ДОХОДЫ И РАСХОДЫ</a></li>
-            <li><a href="Kakebo">KAKEBO</a></li>
-
-        </ul>
-    </nav>
-</aside>
-
-<div class="center">
-    <h2>Здания для покупки</h2>
+<body>
+    <div id="wrapper">
+        <h2>Проекты</h2>
 
 
-    @{ var grid = new WebGrid(Model); }
-    <div>
-        @grid.GetHtml(columns: grid.Columns(
-                                                 grid.Column("Id", "№"),
-                                                 grid.Column("Date", "Дата постройки"),
-                                                 grid.Column("Sum", "Стоимость здания"),
-                                                 grid.Column("Comment", "Дополнительная информация"),
-                                                 grid.Column("Редактировать", format: @<a href="~/ZdanieForPokupka/EditZdanieForPokupka/@item.Id"> Редактировать</a>),
-                                                 grid.Column("Удалить", format: @<a href="~/ZdanieForPokupka/DeleteZdanieForPokupka/@item.Id"> Удалить</a>)
-                                                         ), tableStyle: "table-bordered")
+        @{ var grid = new WebGrid(Model); }
+        <div>
+            @grid.GetHtml(columns: grid.Columns(
+                                                     grid.Column("Id", "№"),
+                                                     grid.Column("Date", "Дата постройки"),
+                                                     grid.Column("Sum", "Стоимость здания"),
+                                                     grid.Column("Comment", "Дополнительная информация"),
+                                                     grid.Column("", format: @<a href="~/ZdanieForPokupka/EditZdanieForPokupka/@item.Id"> Редактировать</a>),
+                                                                     grid.Column("", format: @<a href="~/ZdanieForPokupka/DeleteZdanieForPokupka/@item.Id"> Удалить</a>)
+                                                                                     ), tableStyle: "table-bordered")
+        </div>
+        <input type="button" value="Добавить" onClick='location.href="CreateZdanieForPokupka"'>
+
     </div>
-    <input type="button" value="Добавить" onClick='location.href="CreateZdanieForPokupka"'>
+</body>
 
-</div>
+<footer>
+    <div id="footer">
+        <div id="twitter">
+            <h3>Связаться с нами</h3>
+            <time datetime="2012-10-23"><a href="#">25.09</a></time>
+            <p>
+                Наши контакты:
+                Телефон +7 000 000 00 00
+            </p>
+            <p>
+                e-mail: samistroim@gmail.com
+            </p>
+        </div>
+        <div id="sitemap">
+            <h3>Карта сайта</h3>
+            <div>
+                <a href="C:\Users\User\Desktop\www.construction/customers.html">Клиентам</a>
+                <a href="C:\Users\User\Desktop\www.construction/contact.html">Контакты</a>
+            </div>
+        </div>
+        <div id="social">
+            <h3>Социальные сети:</h3>
+            <a href="http://plus.google.com/" class="social-icon google-plus"></a>
+            <a href="http://instagram.com/" class="social-icon-small instagram"></a>
+            <a href="https://vk.com/" class="social-icon-small vk"></a>
+        </div>
+        <div id="footer-logo">
+            <a href="/"><img src="~/img/footer-logo.png" alt="Whitesquare logo"></a>
 
+        </div>
+    </div>
+</footer>

@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using WeBudget.Models;
 using WeBudget.Service;
 
@@ -75,9 +76,10 @@ namespace WeBudget.Controllers
 
         public ActionResult ZdanieForArendas()
         {
+            JavaScriptSerializer js = new JavaScriptSerializer();
             ConstructionCompanyContext db = new ConstructionCompanyContext();
-            // return View(rashodservice.getList());
-            return View(db.ZdanieForArendas);
+            string json = js.Serialize(db.ZdanieForArendas);
+            return Content(json, "application/json");
         }
     }
 }

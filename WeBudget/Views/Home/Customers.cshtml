@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Customers";
+    ViewBag.Title = "Клиентам";
 }
 
 <head>
@@ -34,18 +34,13 @@
 
 <body>
     <div id="wrapper" ">
-        <header>
-            <form name="search" action="#" method="get">
-                <input type="text" name="q" placeholder="Дом"><button type="submit">Найти</button>
-            </form>
-        </header>
         <nav>
 
             <ul class="top-menu">
                 <li>@Html.ActionLink("Главная", "Home", "Home")</li>
                 <li>@Html.ActionLink("О компании", "About", "Home")</li>
                 <li>@Html.ActionLink("Клиентам", "Customers", "Home")</li>
-                <li>@Html.ActionLink("Проекты", "Project", "Home")</li>
+                <li>@Html.ActionLink("Проекты", "ZdanieForPokupkas", "ZdanieForPokupka")</li>
                 <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
             </ul>
 
@@ -122,12 +117,8 @@
             <div id="sitemap">
                 <h3>Карта сайта</h3>
                 <div>
-                    <a href="~/Views/Home/Home.cshtml">Главная</a>
-                    <a href="~/Views/Home/About">О компании</a>
-                </div>
-                <div>
-                    <a href="~/Views/Home/Customers.cshtml">Клиентам</a>
-                    <a href="~/Views/Home/Contact.cshtml">Контакты</a>
+                    <a href="@Html.ActionLink("Клиентам", "Customers", "Home")"</a>
+                    <a href="@Html.ActionLink("Контакты", "Contact", "Home")"</a>
                 </div>
             </div>
             <div id="social">

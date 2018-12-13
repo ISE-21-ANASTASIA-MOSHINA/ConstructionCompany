@@ -297,7 +297,8 @@ C:\Users\User\Desktop\Строй\WeBudget\bin\ru\System.Web.Razor.resources.dll
 C:\Users\User\Desktop\Строй\WeBudget\bin\ru\System.Web.WebPages.resources.dll
 C:\Users\User\Desktop\Строй\WeBudget\bin\ru\System.Web.WebPages.Deployment.resources.dll
 C:\Users\User\Desktop\Строй\WeBudget\bin\ru\System.Web.WebPages.Razor.resources.dll
-C:\Users\User\Desktop\Строй\WeBudget\obj\Debug\ConstructionCompany.csprojResolveAssemblyReference.cache
 C:\Users\User\Desktop\Строй\WeBudget\obj\Debug\ConstructionCompany.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Строй\WeBudget\obj\Debug\WeBudget.dll
 C:\Users\User\Desktop\Строй\WeBudget\obj\Debug\WeBudget.pdb
+C:\Users\User\Desktop\Строй\WeBudget\obj\Debug\ConstructionCompany.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Строй\WeBudget\obj\Debug\ConstructionCompany.csproj.CopyComplete

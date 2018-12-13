@@ -1,37 +1,143 @@
-﻿
-@{
-    ViewBag.Title = "EditDohod";
-}
-
-<h2>EditZdanieForPokupka</h2>
+﻿@Scripts.Render("~/scripts/jquery-1.10.2.js")
+@Scripts.Render("~/scripts/jquery.validate.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
 
 @{
-    ViewBag.Title = "Редактировать доход";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Изменить проект";
 }
-@model WeBudget.Models.ZdanieForPokupka
-<h2>Здание для покупки № @Model.Id</h2>
-@using (Html.BeginForm("UpdateZdanieForPokupka", "ZdanieForPokupka", FormMethod.Post))
-{
-<fieldset>
-    @Html.HiddenFor(m => m.Id)
-    <p>
-        @Html.LabelFor(m => m.Date, "Дата постройки")
-        <br />
-        @Html.EditorFor(m => m.Date)
-    </p>
-    <p>
-        @Html.LabelFor(m => m.Sum, "Стоимость объекта")
-        <br />
-        @Html.EditorFor(m => m.Sum)
-    </p>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Изменить проект</title>
+    <link rel="stylesheet" href="~/Content/styles.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css" />
+    <title>Выравнивание фотографии по центру</title>
+</head>
 
-    <p>
-        @Html.LabelFor(m => m.Comment, "Дополнительная информация")
-        <br />
-        @Html.EditorFor(m => m.Comment)
-    </p>
-        @Html.HiddenFor(m => m.User)
-    <p><input type="submit" value="Отправить" /></p>
-</fieldset>
-}
+<p class="fig">
+    <img src="~/img/home.jpg"
+         width="1263" height="320" alt="Фотография">
+</p>
+
+<style>
+    .fig {
+        text-align: center; /* Выравнивание по центру */
+    }
+
+
+    .center {
+        width: 700px; /* Ширина элемента в пикселах */
+        padding: 10px; /* Поля вокруг текста */
+        margin: auto; /* Выравниваем по центру */
+    }
+</style>
+
+
+<div id="wrapper" ">
+
+    <nav>
+
+        <ul class="top-menu">
+            <li>@Html.ActionLink("Главная", "Home", "Home")</li>
+            <li>@Html.ActionLink("О компании", "About", "Home")</li>
+            <li>@Html.ActionLink("Клиентам", "Customers", "Home")</li>
+            <li>@Html.ActionLink("Проекты", "ZdanieForPokupkas", "ZdanieForPokupka")</li>
+            <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+        </ul>
+
+    </nav>
+
+
+    <h2>Изменить проект</h2>
+
+
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    @model WeBudget.Models.ZdanieForPokupka
+    <h2>Здание для покупки № @Model.Id</h2>
+
+    <script type="text/javascript">
+
+        function checkForm() {
+            var regex = new RegExp("^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.]((19|20)\\d\\d)$");
+            var date = $('#Date').val();
+            var sum = $('#Sum').val();
+            var comment = $('#Comment').val();
+
+            var submitButton = $('#submitButton');
+
+            if ((comment == "") || (sum == "") || (date == "") || (regex.test(date) == false)) {
+
+                submitButton.prop('disabled', true);
+            }
+            else {
+                submitButton.prop('disabled', false);
+            }
+        }
+
+
+
+    </script>
+
+
+
+    @using (Html.BeginForm("UpdateZdanieForPokupka", "ZdanieForPokupka", FormMethod.Post))
+    {
+        <fieldset>
+            @Html.HiddenFor(m => m.Id)
+            <p>
+                @Html.LabelFor(m => m.Date, "Дата постройки")
+                <br />
+                @Html.EditorFor(m => m.Date, new { htmlAttributes = new { onchange = "checkForm()" } })
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Sum, "Стоимость объекта")
+                <br />
+                @Html.EditorFor(m => m.Sum, new { htmlAttributes = new { onchange = "checkForm()" } })
+            </p>
+
+            <p>
+                @Html.LabelFor(m => m.Comment, "Дополнительная информация")
+                <br />
+                @Html.EditorFor(m => m.Comment, new { htmlAttributes = new { onchange = "checkForm()" } })
+            </p>
+            @Html.HiddenFor(m => m.User)
+            <input id="submitButton" type="submit" value="Отправить" disabled />
+            
+        </fieldset>
+    }
+</div>
+
+<footer>
+    <div id="footer">
+        <div id="twitter">
+            <h3>Связаться с нами</h3>
+            <time datetime="2012-10-23"><a href="#">25.09</a></time>
+            <p>
+                Наши контакты:
+                Телефон +7 000 000 00 00
+            </p>
+            <p>
+                e-mail: samistroim@gmail.com
+            </p>
+        </div>
+        <div id="sitemap">
+            <h3>Карта сайта</h3>
+            <div>
+                <a href="C:\Users\User\Desktop\www.construction/customers.html">Клиентам</a>
+                <a href="C:\Users\User\Desktop\www.construction/contact.html">Контакты</a>
+            </div>
+        </div>
+        <div id="social">
+            <h3>Социальные сети:</h3>
+            <a href="http://plus.google.com/" class="social-icon google-plus"></a>
+            <a href="http://instagram.com/" class="social-icon-small instagram"></a>
+            <a href="https://vk.com/" class="social-icon-small vk"></a>
+        </div>
+        <div id="footer-logo">
+            <a href="/"><img src="~/img/footer-logo.png" alt="Whitesquare logo"></a>
+
+        </div>
+    </div>
+</footer>

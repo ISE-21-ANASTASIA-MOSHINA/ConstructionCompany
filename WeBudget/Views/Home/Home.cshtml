@@ -1,10 +1,10 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Домашняя страница";
 }
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <title>О Компании</title>
+    <title>Домашняя страница</title>
     <link rel="stylesheet" href="~/Content/styles.css" type="text/css" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css" />
     <title>Выравнивание фотографии по центру</title>
@@ -32,19 +32,14 @@
 </style>
 
 <body>
-    <div id="wrapper" ">
-        <header>
-            <form name="search" action="#" method="get">
-                <input type="text" name="q" placeholder="Дом"><button type="submit">Найти</button>
-            </form>
-        </header>
+    <div id="wrapper" >
         <nav>
 
             <ul class="top-menu">
                 <li>@Html.ActionLink("Главная", "Home", "Home")</li>
                 <li>@Html.ActionLink("О компании", "About", "Home")</li>
                 <li>@Html.ActionLink("Клиентам", "Customers", "Home")</li>
-                <li>@Html.ActionLink("Проекты", "Project", "Home")</li>
+                <li>@Html.ActionLink("Проекты", "ZdanieForPokupkas", "ZdanieForPokupka")</li>
                 <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
             </ul>
 
@@ -81,10 +76,6 @@
             <div id="sitemap">
                 <h3>Карта сайта</h3>
                 <div>
-                    <a href="C:\Users\User\Desktop\www.construction/home.html">Главная</a>
-                    <a href="C:\Users\User\Desktop\www.construction/abaut.html">О нас</a>
-                </div>
-                <div>
                     <a href="C:\Users\User\Desktop\www.construction/customers.html">Клиентам</a>
                     <a href="C:\Users\User\Desktop\www.construction/contact.html">Контакты</a>
                 </div>
@@ -96,10 +87,9 @@
                 <a href="https://vk.com/" class="social-icon-small vk"></a>
             </div>
             <div id="footer-logo">
-                <a href="/"><img src="images/footer-logo.png" alt="Whitesquare logo"></a>
+                <a href="/"><img src="~/img/footer-logo.png" alt="Whitesquare logo"></a>
 
             </div>
         </div>
     </footer>
-</body>
-</html>
+</body> 

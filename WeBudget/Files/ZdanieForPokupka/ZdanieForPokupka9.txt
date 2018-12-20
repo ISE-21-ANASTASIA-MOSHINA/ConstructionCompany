@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
 <ZdanieForPokupka xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>5</Id>
-  <Date>2001-01-01T00:00:00</Date>
-  <Sum>500</Sum>
-  <Comment>vfdvfdvfdv</Comment>
+  <Id>9</Id>
+  <Date>2018-12-12T00:00:00</Date>
+  <Sum>4544</Sum>
+  <Comment>джлорп</Comment>
   <User>0</User>
 </ZdanieForPokupka>
